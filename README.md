@@ -4,4 +4,8 @@ Will be exploring the following relationships between drivers and pedastrians us
 
 https://uwaterloo.ca/waterloo-intelligent-systems-engineering-lab/datasets/waterloo-multi-agent-traffic-dataset-crosswalk
 
+Possible usecases:
+- multi-agent traffic behavior modelling
+- trajectory prediction
+- interaction modelling between vehicles and pedestrians
 
