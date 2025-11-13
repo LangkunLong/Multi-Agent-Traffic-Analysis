@@ -2,10 +2,6 @@ import sqlite3
 import pandas as pd
 import matplotlib.pyplot as plt
 
-import sqlite3
-import pandas as pd
-import matplotlib.pyplot as plt
-
 DB_PATH = "/path/.db"
 
 conn = sqlite3.connect(DB_PATH)
