@@ -9,4 +9,6 @@ Possible usecases:
 - trajectory prediction
 - interaction modelling between vehicles and pedestrians
 
-Sample Trajectory plot:
+Example Plot:   
+
+![Example plot](sample-trajectory-plot.png)
