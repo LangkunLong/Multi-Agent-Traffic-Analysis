@@ -2,7 +2,7 @@ import sqlite3
 import pandas as pd
 import matplotlib.pyplot as plt
 
-DB_PATH = "/path/.db"
+DB_PATH = "db_files\intsc_data_769.db"
 
 conn = sqlite3.connect(DB_PATH)
 
@@ -25,7 +25,7 @@ def get_trajectory(tracks):
     traj = pd.read_sql_query(
         f"""
         SELECT TRACK_ID, TIME, X, Y, SPEED
-        FROM TRAJECTORIES_0
+        FROM TRAJECTORIES_0769
         WHERE TRACK_ID IN {track_ids}
         ORDER BY TRACK_ID, TIME
         """, 
