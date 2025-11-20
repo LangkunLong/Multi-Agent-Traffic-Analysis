@@ -1,8 +1,13 @@
 # Multi-Agent-Traffic-Analysis
 
 Will be exploring the following relationships between drivers and pedastrians using the **Waterloo multi-agent traffic dataset: crosswalk**:    
-
 https://uwaterloo.ca/waterloo-intelligent-systems-engineering-lab/datasets/waterloo-multi-agent-traffic-dataset-crosswalk
+
+Gates (from website):
+![](crosswalk_gates.avif)
+
+Segments (from website):
+![](crosswalk_segments.avif)
 
 Possible usecases:
 - multi-agent traffic behavior modelling
