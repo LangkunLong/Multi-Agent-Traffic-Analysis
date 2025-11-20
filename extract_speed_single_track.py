@@ -24,4 +24,4 @@ traj["SPEED_1"] = traj["SPEED"].shift(1)
 traj.dropna()
 print(traj)
 
-# traj.to_excel(output_excel, index=False)
+traj.to_excel(output_excel, index=False)
