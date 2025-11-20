@@ -4,20 +4,22 @@ import pandas as pd
 # extracting the average speed and tangential acceleartion of all the cars along a specific route
 # picking entry and exit to be west_entry_gate to east_exit_gate (or the other way around I could not determine that)
 
-db_files = [f'db_files\intsc_data_{i}.db' for i in range(769, 786)]
+db_files = ['intsc_data_769.db', 'intsc_data_770.db', 'intsc_data_771.db', 'intsc_data_775.db', 'intsc_data_776.db',
+            'intsc_data_777.db', 'intsc_data_778.db', 'intsc_data_779.db', 'intsc_data_780.db', 'intsc_data_781.db',
+            'intsc_data_782.db', 'intsc_data_783.db', 'intsc_data_784.db', 'intsc_data_785.db']
 ENTRY_GATE = 126
 EXIT_GATE = 130
-output_excel = 'multi_agent_speed_accel_data.xlsx'
+output_excel = 'data/multi_agent_speed_accel_data.xlsx'
 
 all_data = []
 
 for db_file in db_files:
     
     print(f"current file: {db_file}")
-    conn = sqlite3.connect(db_file)
+    conn = sqlite3.connect(f'db_files\{db_file}')
     
     df = pd.read_sql_query(
-        """
+        f"""
         SELECT TRACK_ID, ENTRY_GATE, EXIT_GATE, AVG_SPEED_TOTAL, AVG_TANGENTIAL_ACC_TOTAL
         FROM TRAJECTORY_MOVEMENTS
         WHERE TYPE = 'Car' AND ENTRY_GATE = {ENTRY_GATE} AND EXIT_GATE = {EXIT_GATE}
