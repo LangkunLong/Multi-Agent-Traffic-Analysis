@@ -1,15 +1,16 @@
-track_id = 1
-output_excel = f'data/speed_track{track_id}.xlsx'
-
 import sqlite3
 import pandas as pd
+import sys
 
-DB_PATH = "db_files\intsc_data_769.db"
+def main(id):
+    track_id = id
+    DB_PATH = "db_files\intsc_data_769.db"
+    output_excel = f'data/speed_track{track_id}.xlsx'
 
-conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH)
 
 
-traj = pd.read_sql_query(
+    traj = pd.read_sql_query(
     f"""
     SELECT TRACK_ID, TIME, SPEED
     FROM TRAJECTORIES_0769
@@ -17,11 +18,14 @@ traj = pd.read_sql_query(
     ORDER BY TRACK_ID, TIME
     """, 
     conn)
-conn.close()
+    conn.close()
 
-traj["SPEED_0"] = traj["SPEED"]
-traj["SPEED_1"] = traj["SPEED"].shift(1)
-traj.dropna()
-print(traj)
+    traj["SPEED_0"] = traj["SPEED"]
+    traj["SPEED_1"] = traj["SPEED"].shift(1)
+    traj.dropna()
+    print(traj)
 
-traj.to_excel(output_excel, index=False)
+    traj.to_excel(output_excel, index=False)
+
+if __name__ == "__main__":
+    main(sys.argv[1])
