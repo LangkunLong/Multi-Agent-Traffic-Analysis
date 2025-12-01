@@ -23,7 +23,7 @@ def main(id):
     traj["SPEED_0"] = traj["SPEED"]
     traj["SPEED_1"] = traj["SPEED"].shift(1)
     traj.dropna()
-    print(traj)
+    #print(traj)
 
     traj.to_excel(output_excel, index=False)
 
